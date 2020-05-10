@@ -15,7 +15,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	static final String CLIEN_ID = "app-client";
 	static final String CLIENT_SECRET = "$2a$04$e/c1/RfsWuThaWFCrcCuJeoyvwCV0URN/6Pn9ZFlrtIWaU/vj/BfG";
-	//static final String CLIENT_SECRET="abcdddff54565ssfdsgwrtrwtrteb443gfdg";
 	static final String GRANT_TYPE_PASSWORD = "password";
 	static final String AUTHORIZATION_CODE = "authorization_code";
     static final String REFRESH_TOKEN = "refresh_token";

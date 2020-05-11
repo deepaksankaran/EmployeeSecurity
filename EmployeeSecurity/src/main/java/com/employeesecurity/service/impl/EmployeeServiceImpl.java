@@ -1,6 +1,7 @@
 package com.employeesecurity.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -24,7 +25,7 @@ public class EmployeeServiceImpl implements UserDetailsService, EmployeeService 
 		if(employee == null){
 			throw new UsernameNotFoundException("Invalid username or password.");
 		}
-		return new org.springframework.security.core.userdetails.User(employee.getUsername(), employee.getPassword(), getAuthority());
+		return new User(employee.getUsername(), employee.getPassword(), getAuthority());
 	}
 
 	private List<SimpleGrantedAuthority> getAuthority() {

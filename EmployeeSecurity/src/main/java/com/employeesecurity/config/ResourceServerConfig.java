@@ -19,8 +19,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	}
 
 	@Override
-	public void configure(HttpSecurity http) throws Exception {
-        http.
+	public void configure(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.
                 anonymous().disable()
                 .authorizeRequests()
                 .antMatchers("/employees/**").access("hasRole('ADMIN')")

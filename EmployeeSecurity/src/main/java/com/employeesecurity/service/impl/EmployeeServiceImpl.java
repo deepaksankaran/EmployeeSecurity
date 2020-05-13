@@ -20,7 +20,7 @@ public class EmployeeServiceImpl implements UserDetailsService, EmployeeService 
 	@Autowired
 	private EmployeeDao employeeDao;
 
-	public UserDetails loadUserByUsername(String empId) throws UsernameNotFoundException {
+	public UserDetails loadEmployeeByUsername(String empId) throws UsernameNotFoundException {
 		Employee employee = employeeDao.findByUsername(empId);
 		if(employee == null){
 			throw new UsernameNotFoundException("Invalid username or password.");
@@ -47,4 +47,10 @@ public class EmployeeServiceImpl implements UserDetailsService, EmployeeService 
     public Employee save(Employee employee) {
         return employeeDao.save(employee);
     }
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
